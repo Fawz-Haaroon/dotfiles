@@ -1,0 +1,143 @@
+/* ========================================================================== */
+/*                            JapanRainFX                                     */
+/*                        06 - Audio & Media                                  */
+/* ========================================================================== */
+
+
+/* ==========================================================================
+   Playing Audio
+   ========================================================================== */
+
+.tabbrowser-tab[soundplaying] .tab-background {
+
+    border-color: var(--jr-border-audio) !important;
+
+    background: var(--jr-bg-audio) !important;
+
+    box-shadow:
+        0 0 16px rgba(120,255,205,.20),
+        0 0 30px rgba(120,255,205,.10),
+        inset 0 1px rgba(255,255,255,.14);
+
+}
+
+
+/* ==========================================================================
+   Playing Audio Label
+   ========================================================================== */
+
+.tabbrowser-tab[soundplaying] .tab-label {
+
+    color: var(--jr-text-audio) !important;
+
+    text-shadow: var(--jr-glow-audio);
+
+}
+
+
+/* ==========================================================================
+   Playing Audio Icon
+   ========================================================================== */
+
+.tabbrowser-tab[soundplaying] .tab-icon-image {
+
+    transform: scale(1.15);
+
+    filter:
+        drop-shadow(0 0 4px rgba(120,255,205,.45))
+        drop-shadow(0 0 8px rgba(120,255,205,.28));
+
+}
+
+
+/* ==========================================================================
+   Hover
+   ========================================================================== */
+
+.tabbrowser-tab[soundplaying]:hover .tab-icon-image {
+
+    transform: scale(1.22);
+
+}
+
+
+/* ==========================================================================
+   Muted
+   ========================================================================== */
+
+.tabbrowser-tab[muted] .tab-background {
+
+    border-color: rgba(255,220,120,.35) !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,220,120,.08),
+            rgba(255,220,120,.02)
+        ) !important;
+
+}
+
+
+/* ==========================================================================
+   Muted Text
+   ========================================================================== */
+
+.tabbrowser-tab[muted] .tab-label {
+
+    color: rgb(255,232,190) !important;
+
+}
+
+
+/* ==========================================================================
+   Muted Icon
+   ========================================================================== */
+
+.tabbrowser-tab[muted] .tab-icon-image {
+
+    filter:
+        grayscale(.15)
+        drop-shadow(0 0 3px rgba(255,220,120,.30));
+
+}
+
+
+/* ==========================================================================
+   PiP (Picture in Picture)
+   ========================================================================== */
+
+.tabbrowser-tab[pictureinpicture] .tab-background {
+
+    border-color: rgba(120,210,255,.45) !important;
+
+}
+
+
+/* ==========================================================================
+   Media Blocked
+   ========================================================================== */
+
+.tabbrowser-tab[activemedia-blocked] .tab-background {
+
+    border-color: var(--jr-border-pending) !important;
+
+}
+
+
+/* ==========================================================================
+   Smooth State Transitions
+   ========================================================================== */
+
+.tabbrowser-tab[soundplaying] .tab-background,
+.tabbrowser-tab[muted] .tab-background,
+.tabbrowser-tab[pictureinpicture] .tab-background,
+.tabbrowser-tab[activemedia-blocked] .tab-background {
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+
+}

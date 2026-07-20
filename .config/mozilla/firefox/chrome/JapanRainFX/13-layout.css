@@ -1,0 +1,227 @@
+/* ========================================================================== */
+/*                            JapanRainFX                                     */
+/*            13 - Layout Engine (Full-Width, Zero-Gap Tabs)                  */
+/* ========================================================================== */
+
+
+/* ==========================================================================
+   Global Tab Size — thin, compact
+   ========================================================================== */
+
+:root {
+
+    --tab-min-height: 30px !important;
+
+}
+
+
+/* ==========================================================================
+   Horizontal Tab Box — forced to actually fill the tabstrip instead of
+   leaving dead space after the last tab. Scoped to #TabsToolbar only,
+   so this never touches vertical sidebar tabs.
+   ========================================================================== */
+
+#TabsToolbar .tabbrowser-tab {
+
+    flex-grow: 1 !important;
+
+    flex-shrink: 1 !important;
+
+    flex-basis: 0 !important;
+
+    width: auto !important;
+
+    min-width: 140px !important;
+
+    max-width: 270px !important;
+
+}
+
+.tabbrowser-tab {
+
+    padding-inline: 0 !important;
+
+    margin-inline: 0 !important;
+
+}
+
+
+/* ==========================================================================
+   Vertical Tabs — full width of the sidebar, no artificial cap so the
+   whole tab name actually gets room to show
+   ========================================================================== */
+
+#vertical-tabs .tabbrowser-tab,
+.vertical-tabs .tabbrowser-tab,
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab {
+
+    flex-grow: 0 !important;
+
+    flex-shrink: 0 !important;
+
+    flex-basis: auto !important;
+
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    max-width: none !important;
+
+}
+
+
+/* ==========================================================================
+   Content Layout
+   ========================================================================== */
+
+.tab-content {
+
+    padding-inline: 8px !important;
+
+    gap: 4px !important;
+
+    min-height: 22px !important;
+
+    align-items: center !important;
+
+}
+
+
+/* ==========================================================================
+   Tab Background — zero horizontal gap between tabs; the border itself
+   (see 02-materials.css) is now what separates one tab from the next
+   ========================================================================== */
+
+.tab-background {
+
+    margin: 2px 0 !important;
+
+    border-radius: 6px !important;
+
+}
+
+
+/* ==========================================================================
+   Label
+   ========================================================================== */
+
+.tab-label {
+
+    max-width: none !important;
+
+    flex: 1 1 auto !important;
+
+}
+
+
+/* ==========================================================================
+   Favicon
+   ========================================================================== */
+
+.tab-icon-image {
+
+    width: 15px !important;
+
+    height: 15px !important;
+
+    margin-inline-end: 6px !important;
+
+}
+
+
+/* ==========================================================================
+   Close Button — always visible
+   ========================================================================== */
+
+.close-button,
+.tab-close-button {
+
+    display: flex !important;
+
+    -moz-box-align: center !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    margin-inline-start: 4px !important;
+
+    min-width: 16px !important;
+
+    min-height: 16px !important;
+
+    width: 16px !important;
+
+    height: 16px !important;
+
+    opacity: .55 !important;
+
+}
+
+.tabbrowser-tab:hover .close-button,
+.tabbrowser-tab:hover .tab-close-button {
+
+    opacity: 1 !important;
+
+}
+
+.tabbrowser-tab[selected] .close-button,
+.tabbrowser-tab[selected] .tab-close-button {
+
+    opacity: .90 !important;
+
+}
+
+
+/* ==========================================================================
+   Pinned Tabs — kept fixed/small, they're meant to stay compact icons
+   ========================================================================== */
+
+.tabbrowser-tab[pinned] {
+
+    flex-grow: 0 !important;
+
+    flex-shrink: 0 !important;
+
+    flex-basis: 40px !important;
+
+    min-width: 40px !important;
+
+    max-width: 40px !important;
+
+}
+
+
+/* ==========================================================================
+   Hover Room
+   ========================================================================== */
+
+.tabbrowser-tab:hover {
+
+    z-index: 20 !important;
+
+}
+
+
+/* ==========================================================================
+   Active Tab
+   ========================================================================== */
+
+.tabbrowser-tab[selected] {
+
+    z-index: 30 !important;
+
+}
+
+
+/* ==========================================================================
+   Smooth Layout
+   ========================================================================== */
+
+.tab-stack {
+
+    transition:
+
+        all .22s ease;
+
+}

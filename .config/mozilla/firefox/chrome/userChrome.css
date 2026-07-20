@@ -1,0 +1,19 @@
+/* ===========================================================
+   JapanRainFX
+   Firefox UI Enhancement Suite
+   Designed for the Japan Rain Theme
+   =========================================================== */
+
+@import "JapanRainFX/00-variables.css";
+@import "JapanRainFX/01-typography.css";
+@import "JapanRainFX/02-materials.css";
+@import "JapanRainFX/03-tabs.css";
+@import "JapanRainFX/04-hover.css";
+@import "JapanRainFX/05-pinned.css";
+@import "JapanRainFX/06-audio.css";
+@import "JapanRainFX/07-attention.css";
+@import "JapanRainFX/08-toolbar.css";
+@import "JapanRainFX/09-sidebar.css";
+@import "JapanRainFX/10-animations.css";
+@import "JapanRainFX/13-layout.css";
+@import "JapanRainFX/11-extras.css";

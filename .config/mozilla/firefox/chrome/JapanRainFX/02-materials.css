@@ -1,0 +1,161 @@
+/* ========================================================================== */
+/*                            JapanRainFX                                     */
+/*                  02 - Material Engine v3 (Light Glass Rebuild)             */
+/* ========================================================================== */
+
+
+/* ==========================================================================
+   Base Material
+   ========================================================================== */
+
+.tab-background {
+
+    border-radius: 6px !important;
+
+    margin: 2px 0 !important;
+
+    overflow: hidden;
+
+    border: 2px solid var(--jr-border-normal);
+
+    backdrop-filter: blur(var(--jr-blur-small));
+
+    transition:
+
+        background .22s ease,
+
+        border-color .22s ease,
+
+        box-shadow .22s ease,
+
+        transform .22s ease,
+
+        filter .22s ease;
+
+}
+
+
+/* ==========================================================================
+   Normal Glass — bright, translucent, lets the theme wallpaper breathe
+   ========================================================================== */
+
+.tabbrowser-tab:not([selected]):not([pending]):not([busy]):not([soundplaying]):not([attention]) .tab-background {
+
+    background: var(--jr-bg-normal) !important;
+
+    border: 2px solid var(--jr-border-normal) !important;
+
+    box-shadow:
+
+        inset 0 1px rgba(255,255,255,.08),
+
+        0 4px 12px rgba(0,0,0,.15);
+
+}
+
+/* ==========================================================================
+   Hover Material — yellow tint
+   ========================================================================== */
+
+.tabbrowser-tab:hover:not([selected]) .tab-background {
+
+    background: var(--jr-bg-hover) !important;
+
+    border: 2px solid var(--jr-border-hover) !important;
+
+    backdrop-filter: blur(var(--jr-blur-medium));
+
+    box-shadow:
+
+        inset 0 1px rgba(255,255,255,.12),
+
+        0 0 16px rgba(255,220,120,.16),
+
+        0 8px 20px rgba(0,0,0,.20);
+
+}
+
+/* ==========================================================================
+   Selected Material — green tint, the clear "you are here" tab
+   ========================================================================== */
+
+.tabbrowser-tab[selected] .tab-background {
+
+    background: var(--jr-bg-selected) !important;
+
+    border: 2px solid var(--jr-border-selected) !important;
+
+    backdrop-filter: blur(var(--jr-blur-large));
+
+    box-shadow:
+
+        inset 0 1px rgba(255,255,255,.14),
+
+        0 0 20px rgba(120,255,170,.22),
+
+        0 10px 28px rgba(0,0,0,.30);
+
+}
+
+/* ==========================================================================
+   Sleeping / Unloaded — red tint, visibly distinct, not just dark+gray
+   ========================================================================== */
+
+.tabbrowser-tab[pending] .tab-background {
+
+    background: var(--jr-bg-pending) !important;
+
+    border: 2px solid var(--jr-border-pending) !important;
+
+}
+
+/* ==========================================================================
+   Audio — teal tint
+   ========================================================================== */
+
+.tabbrowser-tab[soundplaying] .tab-background {
+
+    background: var(--jr-bg-audio) !important;
+
+    border-color: var(--jr-border-audio);
+
+}
+
+
+/* ==========================================================================
+   Attention — amber tint
+   ========================================================================== */
+
+.tabbrowser-tab[attention] .tab-background {
+
+    background: var(--jr-bg-attention) !important;
+
+    border-color: var(--jr-border-attention);
+
+}
+
+
+/* ==========================================================================
+   Loading
+   ========================================================================== */
+
+.tabbrowser-tab[busy] .tab-background {
+
+    background:
+
+        linear-gradient(
+            90deg,
+
+            rgba(255,255,255,.04),
+
+            rgba(120,220,255,.18),
+
+            rgba(255,255,255,.04)
+
+        ) !important;
+
+    background-size: 300% 100%;
+
+    border-color: var(--jr-border-loading);
+
+}

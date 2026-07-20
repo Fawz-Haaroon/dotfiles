@@ -1,0 +1,207 @@
+/* ========================================================================== */
+/*                               JapanRainFX                                  */
+/*                     00 - Design Tokens (Readability Rebuild)               */
+/* ========================================================================== */
+
+/* ==========================================================================
+   COLOR SYSTEM
+   ========================================================================== */
+
+:root {
+
+    /* ---------------------------
+       Base Palette
+    ---------------------------- */
+
+    --jr-white: rgb(255,255,255);
+    --jr-off-white: rgb(236,240,245);
+
+    --jr-gray-100: rgb(214,221,228);
+    --jr-gray-200: rgb(184,194,204);
+    --jr-gray-300: rgb(145,160,176);
+
+    --jr-black: rgb(15,18,24);
+
+    /* ---------------------------
+       Rain Accent Colors
+    ---------------------------- */
+
+    --jr-cyan: rgb(125,236,255);
+    --jr-blue: rgb(105,195,255);
+    --jr-indigo: rgb(144,170,255);
+    --jr-violet: rgb(198,154,255);
+
+    --jr-green: rgb(125,255,170);
+    --jr-teal: rgb(120,255,215);
+
+    --jr-gold: rgb(255,220,130);
+    --jr-red: rgb(255,125,125);
+
+    /* ---------------------------
+       Transparency (lighter glass - no more "black box" tabs)
+    ---------------------------- */
+
+    --jr-glass-1: rgba(255,255,255,.03);
+    --jr-glass-2: rgba(255,255,255,.05);
+    --jr-glass-3: rgba(255,255,255,.08);
+    --jr-glass-4: rgba(255,255,255,.12);
+
+    /* ---------------------------
+       Frosted Glass
+    ---------------------------- */
+
+    --jr-blur-small: 6px;
+    --jr-blur-medium: 10px;
+    --jr-blur-large: 18px;
+    --jr-blur-xl: 28px;
+
+    /* ---------------------------
+       Radius
+    ---------------------------- */
+
+    --jr-radius-xs: 4px;
+    --jr-radius-sm: 6px;
+    --jr-radius-md: 10px;
+    --jr-radius-lg: 14px;
+    --jr-radius-xl: 20px;
+
+    /* ---------------------------
+       Font Weights
+    ---------------------------- */
+
+    --jr-weight-light: 500;
+    --jr-weight-normal: 600;
+    --jr-weight-bold: 700;
+    --jr-weight-black: 800;
+
+    /* ---------------------------
+       Animation
+    ---------------------------- */
+
+    --jr-fast: .12s;
+    --jr-normal: .20s;
+    --jr-slow: .35s;
+    --jr-very-slow: .6s;
+
+    --jr-ease: cubic-bezier(.22,.61,.36,1);
+
+    /* ==========================================================================
+       READABILITY PALETTE v4
+       One unique, unmistakable color + glow per tab state.
+       Every glow starts with a solid dark anchor shadow so text stays sharp
+       and legible against the wallpaper, not just "colored but soft".
+       ========================================================================== */
+
+    /* Font — sized for thin tabs: legible but compact */
+
+    --jr-tab-font-size: 13.5px;
+    --jr-tab-line-height: 1.3;
+    --jr-tab-letter-spacing: .2px;
+
+    /* Crisp dark anchor — always the first layer of every glow below */
+    --jr-shadow-crisp:
+        0 1px 2px rgba(0,0,0,.92),
+        0 0 1px rgba(0,0,0,.85);
+
+    /* ---------------------------
+       Text Colors per State
+    ---------------------------- */
+
+    --jr-text-normal:    rgb(140,195,255);   /* loaded/active window -> blue        */
+    --jr-text-hover:     rgb(255,224,120);   /* hover                -> warm yellow */
+    --jr-text-selected:  rgb(150,255,180);   /* current tab          -> bright green*/
+    --jr-text-pending:   rgb(255,255,255);   /* sleeping/unloaded    -> bright white*/
+    --jr-text-audio:     rgb(150,255,215);   /* audio playing        -> teal/mint   */
+    --jr-text-pinned:    rgb(215,180,255);   /* pinned               -> amethyst    */
+    --jr-text-loading:   rgb(140,225,255);   /* busy/loading         -> cyan        */
+    --jr-text-attention: rgb(255,205,110);   /* needs attention      -> amber       */
+
+    /* ---------------------------
+       Text Glows per State (crisp dark anchor + colored bloom on top)
+    ---------------------------- */
+
+    --jr-glow-normal:
+        var(--jr-shadow-crisp),
+        0 0 3px rgba(160,210,255,.90),
+        0 0 9px rgba(120,190,255,.55);
+
+    --jr-glow-hover:
+        var(--jr-shadow-crisp),
+        0 0 3px rgba(255,235,150,.95),
+        0 0 10px rgba(255,220,110,.80),
+        0 0 18px rgba(255,205,90,.40);
+
+    --jr-glow-selected:
+        var(--jr-shadow-crisp),
+        0 0 3px rgba(190,255,210,1),
+        0 0 10px rgba(120,255,170,.90),
+        0 0 20px rgba(120,255,170,.50);
+
+    --jr-glow-pending:
+        var(--jr-shadow-crisp),
+        0 0 3px rgba(255,255,255,1),
+        0 0 8px rgba(255,255,255,.55);
+
+    --jr-glow-audio:
+        var(--jr-shadow-crisp),
+        0 0 3px rgba(190,255,230,.95),
+        0 0 10px rgba(120,255,205,.80),
+        0 0 18px rgba(120,255,205,.40);
+
+    --jr-glow-pinned:
+        var(--jr-shadow-crisp),
+        0 0 3px rgba(225,195,255,.85),
+        0 0 9px rgba(205,165,255,.65),
+        0 0 16px rgba(205,165,255,.35);
+
+    --jr-glow-loading:
+        var(--jr-shadow-crisp),
+        0 0 3px rgba(180,235,255,.90),
+        0 0 9px rgba(120,220,255,.70),
+        0 0 16px rgba(120,220,255,.35);
+
+    --jr-glow-attention:
+        var(--jr-shadow-crisp),
+        0 0 3px rgba(255,225,170,.90),
+        0 0 9px rgba(255,205,110,.75),
+        0 0 16px rgba(255,190,90,.40);
+
+    /* ---------------------------
+       Background Tints per State (glass, NOT opaque black)
+    ---------------------------- */
+
+    --jr-bg-normal:
+        linear-gradient(180deg, rgba(130,195,255,.10), rgba(130,195,255,.03));
+
+    --jr-bg-hover:
+        linear-gradient(180deg, rgba(255,220,120,.14), rgba(255,220,120,.04));
+
+    --jr-bg-selected:
+        linear-gradient(180deg, rgba(120,255,170,.16), rgba(120,255,170,.05));
+
+    --jr-bg-pending:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.015));
+
+    --jr-bg-audio:
+        linear-gradient(180deg, rgba(120,255,205,.14), rgba(120,255,205,.04));
+
+    --jr-bg-pinned:
+        linear-gradient(180deg, rgba(205,165,255,.13), rgba(205,165,255,.04));
+
+    --jr-bg-attention:
+        linear-gradient(180deg, rgba(255,205,110,.14), rgba(255,205,110,.04));
+
+    /* ---------------------------
+       Border colors per state
+    ---------------------------- */
+
+    --jr-border-normal:    rgba(130,195,255,.45);
+    --jr-border-hover:     rgba(255,220,120,.65);
+    --jr-border-selected:  rgba(120,255,170,.80);
+    --jr-border-pending:   rgba(255,255,255,.30);
+    --jr-border-audio:     rgba(120,255,205,.65);
+    --jr-border-pinned:    rgba(205,165,255,.60);
+    --jr-border-loading:   rgba(120,220,255,.65);
+    --jr-border-attention: rgba(255,205,110,.70);
+
+}

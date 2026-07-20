@@ -1,0 +1,130 @@
+/* ========================================================================== */
+/*                            JapanRainFX                                     */
+/*                         05 - Pinned Tabs                                   */
+/* ========================================================================== */
+
+
+/* ==========================================================================
+   Base Pinned Tab
+   ========================================================================== */
+
+.tabbrowser-tab[pinned] {
+
+    position: relative;
+
+}
+
+
+/* ==========================================================================
+   Pinned Background
+   ========================================================================== */
+
+.tabbrowser-tab[pinned] .tab-background {
+
+    border-color: var(--jr-border-pinned) !important;
+
+    background: var(--jr-bg-pinned) !important;
+
+}
+
+
+/* ==========================================================================
+   Hover
+   ========================================================================== */
+
+.tabbrowser-tab[pinned]:hover .tab-background {
+
+    box-shadow:
+
+        0 0 18px rgba(205,165,255,.24),
+
+        inset 0 1px rgba(255,255,255,.16);
+
+}
+
+
+/* ==========================================================================
+   Selected
+   ========================================================================== */
+
+.tabbrowser-tab[pinned][selected] .tab-background {
+
+    box-shadow:
+
+        0 0 24px rgba(205,165,255,.30),
+
+        inset 0 1px rgba(255,255,255,.20);
+
+}
+
+
+/* ==========================================================================
+   Slightly Larger Icon
+   ========================================================================== */
+
+.tabbrowser-tab[pinned] .tab-icon-image {
+
+    transform: scale(1.08);
+
+}
+
+.tabbrowser-tab[pinned]:hover .tab-icon-image {
+
+    transform: scale(1.16);
+
+}
+
+.tabbrowser-tab[pinned][selected] .tab-icon-image {
+
+    transform: scale(1.20);
+
+}
+
+
+/* ==========================================================================
+   Jewel Indicator
+   ========================================================================== */
+
+.tabbrowser-tab[pinned] .tab-background::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 3px;
+
+    transform: translateX(-50%);
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: rgb(215,180,255);
+
+    box-shadow:
+        0 0 6px rgba(215,180,255,.60),
+        0 0 12px rgba(215,180,255,.40);
+
+    opacity: .70;
+
+}
+
+
+/* ==========================================================================
+   Active Jewel
+   ========================================================================== */
+
+.tabbrowser-tab[pinned][selected] .tab-background::after {
+
+    width: 6px;
+    height: 6px;
+
+    opacity: 1;
+
+    box-shadow:
+        0 0 8px rgba(215,180,255,.80),
+        0 0 18px rgba(215,180,255,.60);
+
+}

@@ -1,0 +1,135 @@
+/* ========================================================================== */
+/*                            JapanRainFX                                     */
+/*                           11 - Final Polish                                */
+/* ========================================================================== */
+
+
+/* Better text rendering */
+
+* {
+
+    text-rendering: geometricPrecision;
+
+}
+
+
+/* Rounded popups */
+
+menupopup,
+panel {
+
+    border-radius: 14px !important;
+
+}
+
+
+/* Smooth transitions */
+
+* {
+
+    transition-timing-function:
+
+        cubic-bezier(.22,.61,.36,1);
+
+}
+
+
+/* Remove ugly outlines */
+
+* {
+
+    outline: none !important;
+
+}
+
+
+/* Window */
+
+:root {
+
+    --toolbarbutton-border-radius: 10px;
+
+}
+
+
+/* Compact separators */
+
+toolbarseparator {
+
+    opacity: .25;
+
+}
+
+
+/* Better popup shadows */
+
+panel {
+
+    box-shadow:
+
+        0 10px 40px rgba(0,0,0,.35) !important;
+
+}
+
+
+/* Downloads */
+
+#downloadsPanel {
+
+    backdrop-filter:
+
+        blur(20px);
+
+}
+
+
+/* Identity Icon */
+
+#identity-box {
+
+    transition:
+
+        transform .2s ease;
+
+}
+
+#identity-box:hover {
+
+    transform:
+
+        scale(1.05);
+
+}
+
+
+/* Reload */
+
+#reload-button:hover {
+
+    transform:
+
+        rotate(15deg);
+
+}
+
+
+/* Star */
+
+#star-button:hover {
+
+    transform:
+
+        scale(1.15);
+
+}
+
+
+/* Home */
+
+#home-button:hover {
+
+    transform:
+
+        translateY(-1px);
+
+}

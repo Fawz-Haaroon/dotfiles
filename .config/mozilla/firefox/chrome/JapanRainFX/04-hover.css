@@ -1,0 +1,150 @@
+/* ========================================================================== */
+/*                            JapanRainFX                                     */
+/*                           04 - Hover Engine                                */
+/*      (motion/lift kept exactly as-is — this is the part you loved)        */
+/* ========================================================================== */
+
+
+/* ==========================================================================
+   Base Hover Transition
+   ========================================================================== */
+
+.tabbrowser-tab,
+.tab-background,
+.tab-content,
+.tab-icon-image,
+.tab-label {
+
+    transition:
+        all var(--jr-normal) var(--jr-ease);
+
+}
+
+
+/* ==========================================================================
+   Hover Lift
+   ========================================================================== */
+
+.tabbrowser-tab:hover {
+
+    transform: translateY(-2px) scale(1.015);
+
+}
+
+
+/* ==========================================================================
+   Active Lift
+   ========================================================================== */
+
+.tabbrowser-tab[selected] {
+
+    transform: translateY(-2px) scale(1.02);
+
+}
+
+
+/* ==========================================================================
+   Hover Background
+   ========================================================================== */
+
+.tabbrowser-tab:hover .tab-background {
+
+    backdrop-filter: blur(var(--jr-blur-medium));
+
+    filter: brightness(1.08);
+
+}
+
+
+/* ==========================================================================
+   Active Background
+   ========================================================================== */
+
+.tabbrowser-tab[selected] .tab-background {
+
+    backdrop-filter: blur(var(--jr-blur-large));
+
+}
+
+
+/* ==========================================================================
+   Icon Animation
+   ========================================================================== */
+
+.tabbrowser-tab:hover .tab-icon-image {
+
+    transform: scale(1.12) rotate(-3deg);
+
+}
+
+.tabbrowser-tab[selected] .tab-icon-image {
+
+    transform: scale(1.15);
+
+}
+
+
+/* ==========================================================================
+   Text Enhancement
+   ========================================================================== */
+
+.tabbrowser-tab:hover .tab-label {
+
+    letter-spacing: .38px;
+
+}
+
+.tabbrowser-tab[selected] .tab-label {
+
+    letter-spacing: .42px;
+
+}
+
+
+/* ==========================================================================
+   Close Button
+   ========================================================================== */
+
+.close-button {
+
+    opacity: .45 !important;
+
+    transition:
+        opacity .20s ease,
+        transform .20s ease;
+
+}
+
+.tabbrowser-tab:hover .close-button {
+
+    opacity: 1 !important;
+
+    transform: scale(1.15);
+
+}
+
+
+/* ==========================================================================
+   Selected Close Button
+   ========================================================================== */
+
+.tabbrowser-tab[selected] .close-button {
+
+    opacity: .90 !important;
+
+}
+
+
+/* ==========================================================================
+   Gentle Bloom — now yellow-tinted to match the hover state color
+   ========================================================================== */
+
+.tabbrowser-tab:hover .tab-background {
+
+    box-shadow:
+
+        0 0 16px rgba(255,220,120,.18),
+
+        0 6px 22px rgba(0,0,0,.22);
+
+}

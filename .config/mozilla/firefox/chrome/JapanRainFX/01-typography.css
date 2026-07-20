@@ -1,0 +1,214 @@
+/* ========================================================================== */
+/*                            JapanRainFX                                     */
+/*                01 - Typography Engine v4 (Readability Rebuild)             */
+/* ========================================================================== */
+
+
+/* ==========================================================================
+   Base Label
+   ========================================================================== */
+
+.tab-label {
+
+    font-family:
+        "Inter",
+        "SF Pro Display",
+        "Noto Sans",
+        sans-serif !important;
+
+    font-size: var(--jr-tab-font-size) !important;
+
+    font-weight: 640 !important;
+
+    line-height: var(--jr-tab-line-height) !important;
+
+    letter-spacing: var(--jr-tab-letter-spacing) !important;
+
+    color: var(--jr-text-normal) !important;
+
+    text-rendering: geometricPrecision;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    text-shadow: var(--jr-glow-normal);
+
+    transition:
+        color .18s ease,
+        text-shadow .18s ease,
+        transform .18s ease,
+        letter-spacing .18s ease,
+        font-weight .18s ease;
+
+}
+
+
+/* ==========================================================================
+   Default Loaded Tabs ("active windows" — blue, crisp against the wallpaper)
+   ========================================================================== */
+
+.tabbrowser-tab:not([selected]):not([pending]):not([soundplaying]):not([attention]):not([busy]):not([pinned]) .tab-label {
+
+    color: var(--jr-text-normal) !important;
+
+    font-weight: 640 !important;
+
+    text-shadow: var(--jr-glow-normal);
+
+}
+
+
+/* ==========================================================================
+   Hover — warm yellow, milder than the selected glow
+   ========================================================================== */
+
+.tabbrowser-tab:hover .tab-label {
+
+    color: var(--jr-text-hover) !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: .38px;
+
+    text-shadow: var(--jr-glow-hover);
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ==========================================================================
+   Selected — the star of the show, bright green glow
+   ========================================================================== */
+
+.tabbrowser-tab[selected] .tab-label {
+
+    color: var(--jr-text-selected) !important;
+
+    font-weight: 780 !important;
+
+    letter-spacing: .42px;
+
+    transform: translateY(-1px);
+
+    text-shadow: var(--jr-glow-selected);
+
+}
+
+
+/* ==========================================================================
+   Audio Playing — teal/mint, distinct from selected green
+   ========================================================================== */
+
+.tabbrowser-tab[soundplaying] .tab-label {
+
+    color: var(--jr-text-audio) !important;
+
+    font-weight: 700 !important;
+
+    text-shadow: var(--jr-glow-audio);
+
+}
+
+
+/* ==========================================================================
+   Pinned — amethyst
+   ========================================================================== */
+
+.tabbrowser-tab[pinned] .tab-label {
+
+    color: var(--jr-text-pinned) !important;
+
+    font-weight: 700 !important;
+
+    text-shadow: var(--jr-glow-pinned);
+
+}
+
+
+/* ==========================================================================
+   Loading — cyan
+   ========================================================================== */
+
+.tabbrowser-tab[busy] .tab-label {
+
+    color: var(--jr-text-loading) !important;
+
+    font-weight: 700 !important;
+
+    text-shadow: var(--jr-glow-loading);
+
+}
+
+
+/* ==========================================================================
+   Needs Attention — amber, pulsing
+   ========================================================================== */
+
+.tabbrowser-tab[attention] .tab-label {
+
+    color: var(--jr-text-attention) !important;
+
+    font-weight: 780 !important;
+
+    text-shadow: var(--jr-glow-attention);
+
+    animation: jr-attention-pulse 4s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================================
+   Sleeping / Unloaded Tabs — bright white, unique and easy to spot,
+   no longer the red that was clashing with the theme
+   ========================================================================== */
+
+.tabbrowser-tab[pending] .tab-label {
+
+    color: var(--jr-text-pending) !important;
+
+    opacity: 1 !important;
+
+    font-weight: 640 !important;
+
+    text-shadow: var(--jr-glow-pending);
+
+}
+
+
+/* ==========================================================================
+   Content Layout
+   ========================================================================== */
+
+.tab-content {
+
+    padding-inline: 10px !important;
+
+    align-items: center !important;
+
+}
+
+
+/* ==========================================================================
+   Favicon
+   ========================================================================== */
+
+.tab-icon-image {
+
+    margin-inline-end: 8px !important;
+
+}
+
+
+/* ==========================================================================
+   Better Contrast
+   ========================================================================== */
+
+.tabbrowser-tab {
+
+    --tab-label-mask-size: 0px !important;
+
+}

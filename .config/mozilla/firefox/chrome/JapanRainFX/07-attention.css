@@ -1,0 +1,91 @@
+/* ========================================================================== */
+/*                            JapanRainFX                                     */
+/*                    07 - Attention & Sleeping States                        */
+/* ========================================================================== */
+
+
+/* ==========================================================================
+   Attention Required
+   ========================================================================== */
+
+.tabbrowser-tab[attention] .tab-background {
+
+    background: var(--jr-bg-attention) !important;
+
+    border-color: var(--jr-border-attention) !important;
+
+    box-shadow:
+        0 0 16px rgba(255,205,110,.20),
+        inset 0 1px rgba(255,255,255,.12);
+
+}
+
+.tabbrowser-tab[attention] .tab-label {
+
+    color: var(--jr-text-attention) !important;
+
+    text-shadow: var(--jr-glow-attention);
+
+    animation: jr-attention-pulse 4s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================================
+   Sleeping / Pending — now reads clearly as "unloaded" via red glow,
+   instead of just being dark and desaturated into illegibility
+   ========================================================================== */
+
+.tabbrowser-tab[pending] .tab-background {
+
+    background: var(--jr-bg-pending) !important;
+
+    border-color: var(--jr-border-pending) !important;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,.10),
+        inset 0 1px rgba(255,255,255,.06);
+
+}
+
+.tabbrowser-tab[pending] .tab-label {
+
+    color: var(--jr-text-pending) !important;
+
+    text-shadow: var(--jr-glow-pending);
+
+}
+
+
+/* ==========================================================================
+   Busy / Loading
+   ========================================================================== */
+
+.tabbrowser-tab[busy] .tab-background {
+
+    border-color: var(--jr-border-loading) !important;
+
+    box-shadow:
+        0 0 12px rgba(120,220,255,.16),
+        inset 0 1px rgba(255,255,255,.10);
+
+}
+
+.tabbrowser-tab[busy] .tab-icon-image {
+
+    filter:
+        drop-shadow(0 0 4px rgba(120,220,255,.35));
+
+}
+
+
+/* ==========================================================================
+   Hover Priority
+   ========================================================================== */
+
+.tabbrowser-tab[attention]:hover .tab-background,
+.tabbrowser-tab[busy]:hover .tab-background {
+
+    filter: brightness(1.12);
+
+}

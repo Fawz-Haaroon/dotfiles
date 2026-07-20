@@ -1,0 +1,283 @@
+/* ========================================================================== */
+/*                            JapanRainFX                                     */
+/*                      08 - Toolbar & Navigation                             */
+/* ========================================================================== */
+
+
+/* ==========================================================================
+   Main Navigation Bar
+   ========================================================================== */
+
+#nav-bar {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(18,22,30,.32),
+            rgba(12,15,22,.38)
+        ) !important;
+
+    backdrop-filter: blur(var(--jr-blur-medium));
+
+    border-top: none !important;
+
+    border-bottom: 1px solid rgba(255,255,255,.05) !important;
+
+    box-shadow:
+
+        inset 0 1px rgba(255,255,255,.04),
+
+        0 8px 28px rgba(0,0,0,.20);
+
+}
+
+
+/* ==========================================================================
+   Tabs Toolbar
+   ========================================================================== */
+
+#TabsToolbar {
+
+    background: transparent !important;
+
+    border: none !important;
+
+}
+
+
+/* ==========================================================================
+   Unified Toolbar Background
+   ========================================================================== */
+
+#navigator-toolbox {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(20,24,34,.30),
+            rgba(12,16,24,.35)
+        ) !important;
+
+    border: none !important;
+
+}
+
+
+/* ==========================================================================
+   Toolbar Buttons
+   ========================================================================== */
+
+.toolbarbutton-1 {
+
+    border-radius: var(--jr-radius-md) !important;
+
+    transition:
+
+        background .20s ease,
+
+        transform .20s ease,
+
+        box-shadow .20s ease;
+
+}
+
+
+/* ==========================================================================
+   Toolbar Hover
+   ========================================================================== */
+
+.toolbarbutton-1:hover {
+
+    background:
+
+        rgba(255,255,255,.08) !important;
+
+    transform:
+
+        translateY(-1px);
+
+    box-shadow:
+
+        0 0 10px rgba(255,255,255,.10);
+
+}
+
+
+/* ==========================================================================
+   Toolbar Active
+   ========================================================================== */
+
+.toolbarbutton-1:active {
+
+    transform:
+
+        scale(.94);
+
+}
+
+
+/* ==========================================================================
+   Address Bar
+   ========================================================================== */
+
+#urlbar-background {
+
+    border-radius: 14px !important;
+
+    border:
+
+        1px solid rgba(255,255,255,.08) !important;
+
+    background:
+
+        rgba(255,255,255,.05) !important;
+
+    backdrop-filter:
+
+        blur(var(--jr-blur-large));
+
+    box-shadow:
+
+        inset 0 1px rgba(255,255,255,.10);
+
+}
+
+
+/* ==========================================================================
+   Focused Address Bar
+   ========================================================================== */
+
+#urlbar[focused="true"] #urlbar-background {
+
+    border-color:
+
+        rgba(130,235,255,.35) !important;
+
+    box-shadow:
+
+        0 0 18px rgba(130,235,255,.18),
+
+        inset 0 1px rgba(255,255,255,.16);
+
+}
+
+
+/* ==========================================================================
+   URL Text
+   ========================================================================== */
+
+#urlbar-input {
+
+    color:
+
+        rgb(245,248,255) !important;
+
+    font-weight:
+
+        600 !important;
+
+}
+
+
+/* ==========================================================================
+   Search Suggestions
+   ========================================================================== */
+
+.urlbarView {
+
+    border-radius:
+
+        14px !important;
+
+    border:
+
+        1px solid rgba(255,255,255,.06) !important;
+
+    background:
+
+        rgba(20,25,35,.92) !important;
+
+    backdrop-filter:
+
+        blur(var(--jr-blur-xl));
+
+}
+
+
+/* ==========================================================================
+   Selected Suggestion
+   ========================================================================== */
+
+.urlbarView-row[selected] {
+
+    background:
+
+        rgba(130,235,255,.12) !important;
+
+}
+
+
+/* ==========================================================================
+   Bookmark Toolbar
+   ========================================================================== */
+
+#PersonalToolbar {
+
+    background:
+
+        transparent !important;
+
+    border: none !important;
+
+}
+
+
+/* ==========================================================================
+   Toolbar Icons
+   ========================================================================== */
+
+.toolbarbutton-icon {
+
+    transition:
+
+        transform .20s ease,
+
+        filter .20s ease;
+
+}
+
+.toolbarbutton-1:hover .toolbarbutton-icon {
+
+    transform:
+
+        scale(1.08);
+
+    filter:
+
+        drop-shadow(0 0 5px rgba(255,255,255,.18));
+
+}
+
+
+/* ==========================================================================
+   Window Divider
+   ========================================================================== */
+
+#navigator-toolbox::after {
+
+    content: "";
+
+    display: block;
+
+    height: 1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.08),
+            transparent
+        );
+
+}
