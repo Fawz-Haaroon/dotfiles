@@ -1,0 +1,176 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  "logo": {
+    "type": "kitty",
+    "height": 21,
+    "padding": {
+      "top": 1,
+      "right": 6,
+      "left": 1,
+      "bottom": 0
+    }
+  },
+
+  "display": {
+    "separator": "",
+    "constants": [
+      "\u001b[90m│                                                             │\u001b[61D\u001b[39m"
+    ]
+  },
+
+  "modules": [
+    "break",
+
+    {
+      "type": "custom",
+      "key": "{#90}╭─────────────╮",
+      "format": "{#90}╭─────────────────────────────────────────────────────────────╮"
+    },
+
+    {
+      "type": "title",
+      "key": "{#90}│ {#92}User        {#90}│",
+      "format": "{$1}\u001b[38;2;122;162;247m{user-name}\u001b[39m [home:{home-dir}]"
+    },
+
+    {
+      "type": "command",
+      "key": "{#90}│ {#92}Session     {#90}│",
+      "text": "printf 'Login:%s' \"$(who -u | awk '$1==ENVIRON[\"USER\"] {print $6; exit}')\"",
+      "format": "{$1}\u001b[38;2;122;162;247m{}\u001b[39m"
+    },
+
+    {
+      "type": "datetime",
+      "key": "{#90}│ {#92}Datetime    {#90}│",
+      "format": "{$1}\u001b[38;2;224;175;104m{year}-{month-pretty}-{day-in-month} {hour-pretty}:{minute-pretty}:{second-pretty} [{weekday}] [W{week}] [UTC{offset-from-utc}]\u001b[39m"
+    },
+
+    {
+      "type": "packages",
+      "key": "{#90}│ {#92}Packages    {#90}│",
+      "format": "{$1}\u001b[38;2;122;162;247m{all}\u001b[39m"
+    },
+
+
+
+    {
+      "type": "title",
+      "key": "{#90}│ {#93}Host        {#90}│",
+      "format": "{$1}\u001b[38;2;122;162;247m{host-name}\u001b[39m"
+    },
+
+    {
+      "type": "host",
+      "key": "{#90}│ {#93}Machine     {#90}│",
+      "format": "{$1}\u001b[38;2;122;162;247m{name}\u001b[39m {version}"
+    },
+
+    {
+      "type": "os",
+      "key": "{#90}│ {#93}OS          {#90}│",
+      "format": "{$1}\u001b[38;2;122;162;247m{?pretty-name}{pretty-name}{?}{/pretty-name}{name}{/} {codename} [v{version}] [{arch}]\u001b[39m"
+    },
+
+    {
+      "type": "kernel",
+      "key": "{#90}│ {#93}Kernel      {#90}│",
+      "format": "{$1}\u001b[38;2;122;162;247m{sysname} [v{release}]\u001b[39m"
+    },
+
+    {
+      "type": "uptime",
+      "key": "{#90}│ {#93}Uptime      {#90}│",
+      "format": "{$1}\u001b[38;2;224;175;104m{?days}{days} Days + {?}{hours}:{minutes}:{seconds}\u001b[39m"
+    },
+
+
+
+    {
+      "type": "cpu",
+      "key": "{#90}│ {#91}CPU         {#90}│",
+      "showPeCoreCount": true,
+      "temp": true,
+      "format": "{$1}\u001b[38;2;247;118;142m{name}\u001b[39m [C:{core-types}] [{freq-max}]"
+    },
+
+    {
+      "type": "gpu",
+      "key": "{#90}│ {#91}GPU         {#90}│",
+      "detectionMethod": "auto",
+      "driverSpecific": true,
+      "format": "{$1}\u001b[38;2;247;118;142m{name}\u001b[39m [C:{core-count}]{?frequency} [{frequency}]{?} [{type}]"
+    },
+
+    {
+      "type": "memory",
+      "key": "{#90}│ {#91}Memory      {#90}│",
+      "format": "{$1}\u001b[38;2;158;206;106m{used} / {total} ({percentage})\u001b[39m"
+    },
+
+    {
+      "type": "disk",
+      "key": "{#90}│ {#91}Disk        {#90}│",
+      "format": "{$1}\u001b[38;2;158;206;106m{size-used} / {size-total} ({size-percentage})\u001b[39m"
+    },
+
+    {
+      "type": "command",
+      "key": "{#90}│ {#91}Battery     {#90}│",
+      "text": "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/percentage/ {p=$2} /charge-cycles/ {c=$2} /energy-full:/ {f=$2} /energy-full-design:/ {d=$2} END {printf \"%s  %s cycles  %.1f%% health\", p, c, f/d*100}'",
+      "format": "{$1}\u001b[38;2;158;206;106m{}\u001b[39m"
+    },
+
+
+
+    {
+      "type": "processes",
+      "key": "{#90}│ {#95}Processes   {#90}│",
+      "format": "{$1}\u001b[38;2;187;154;247m{result}\u001b[39m"
+    },
+
+    {
+      "type": "terminal",
+      "key": "{#90}│ {#95}Terminal    {#90}│",
+      "format": "{$1}\u001b[38;2;187;154;247m{pretty-name}\u001b[39m [v{version}] [PID:{pid}]"
+    },
+
+    {
+      "type": "terminalfont",
+      "key": "{#90}│ {#95}Font        {#90}│",
+      "format": "{$1}\u001b[38;2;187;154;247m{name}\u001b[39m [size:{size}]"
+    },
+
+    {
+      "type": "shell",
+      "key": "{#90}│ {#95}Shell       {#90}│",
+      "format": "{$1}\u001b[38;2;187;154;247m{pretty-name}\u001b[39m [v{version}] [PID:{pid}]"
+    },
+
+
+
+    {
+      "type": "dns",
+      "key": "{#90}│ {#94}DNS         {#90}│",
+      "format": "{$1}\u001b[38;2;125;207;255m{result}\u001b[39m"
+    },
+
+    {
+      "type": "localip",
+      "key": "{#90}│ {#94}Local IPv4  {#90}│",
+      "showPrefixLen": true,
+      "showIpv4": true,
+      "showIpv6": false,
+      "showMtu": true,
+      "defaultRouteOnly": true,
+      "format": "{$1}\u001b[38;2;125;207;255m{ifname}: {ipv4}\u001b[39m [MTU:{mtu}]"
+    },
+
+    {
+      "type": "custom",
+      "key": "{#90}╰─────────────╯",
+      "format": "{#90}╰─────────────────────────────────────────────────────────────╯"
+    }
+  ]
+}
